@@ -1,0 +1,57 @@
+import Head from 'next/head'
+import book from '../../../data/lucas'
+import { Chapter } from '../../../components/chapter'
+
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { slug: 'capitulo-1' } },
+    ],
+    fallback: true,
+  }
+}
+
+export const getStaticProps = async (context) => {
+  const chapter = Number(context.params.slug.split('-')[1])
+
+  if (chapter === 0 || !book.content[chapter]) {
+    return {
+      redirect: {
+        destination: `/${book.slug}`,
+      },
+    }
+  }
+
+  return {
+    props: {
+      chapter,
+      text: book.content[chapter],
+    },
+  }
+}
+
+export default function Page({ chapter, text }) {
+  if (!text || chapter === undefined) {
+    return <div>Cargando...</div>
+  }
+
+  const title = `${book.title} – Capítulo ${chapter}`
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content={`Texto del capítulo ${chapter} del libro de ${book.title}.`}
+        />
+      </Head>
+      <Chapter
+        book={book.title}
+        slug={book.slug}
+        chapter={chapter}
+        text={text}
+      />
+    </>
+  )
+}

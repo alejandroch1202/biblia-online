@@ -1,0 +1,23 @@
+import { Cards } from 'nextra/components'
+import book from '../data/colosenses'
+
+# Libro de Colosenses
+
+---
+
+{ `${book.content[0]}` }
+<p style={{visibility: 'hidden'}}>Colosenses</p>
+
+<Cards>
+  {
+    book.content.slice(1).map((_, index) => {
+      return (
+        <Cards.Card
+        key={index}
+        title={`Capitulo ${index + 1}`}
+        href={`/${book.slug}/capitulo-${index + 1}`}
+        />
+        )
+      })
+  } 
+</Cards>

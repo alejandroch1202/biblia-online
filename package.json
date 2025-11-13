@@ -1,0 +1,28 @@
+{
+  "name": "biblia-online",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Biblia online",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+  },
+  "author": "Alejandro Chavez <me@alejandroch.com>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^15.0.0",
+    "nextra": "^3.0.0",
+    "nextra-theme-docs": "^3.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "typescript": "^4.9.3"
+  }
+}
