@@ -29,6 +29,7 @@ const config: DocsThemeConfig = {
   },
   feedback: { content: null },
   search: { placeholder: 'Buscar' },
+  gitTimestamp: <span style={{ visibility: 'hidden' }}></span>,
   editLink: { component: null },
   head: () => {
     const config = useConfig()
