@@ -15,7 +15,7 @@
   "author": "Alejandro Chavez <me@alejandroch.com>",
   "license": "MIT",
   "dependencies": {
-    "next": "^15.0.0",
+    "next": "15.0.7",
     "nextra": "^3.0.0",
     "nextra-theme-docs": "^3.0.0",
     "react": "^18.2.0",
